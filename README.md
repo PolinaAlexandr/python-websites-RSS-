@@ -1,2 +1,2 @@
 # Python RSS reader
-- transfer url (users) to several rss posts (tested  on reddit)
+- Read several rss post from the provided URL (tested  on reddit)
