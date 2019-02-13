@@ -1,10 +1,10 @@
 # Python RSS reader
-- Read several rss post from the provided URL (tested  on reddit)
-   <s> - add etree librery
-    - add requests 
-    - parse xml file(with etree)
-        - tested on simpe test file
-    - print 5(?) latest posts</s>
-    - Add class for new parsed objects
-    - two subclasses
-    - print method    
+- Read 5 latest posts in terminal.
+    - Parse XML from RSS URL
+        - Two sources with written behavior + one user controlled(by teg search)   
+    - Search titles by tags special tags
+    - Find time of updating or adding every single news 
+        - datetine.strptime + date unique format
+- How to run:
+    - Actiavte virtual environment (venv/pipenv)
+    - python main.py + url in RSS format
