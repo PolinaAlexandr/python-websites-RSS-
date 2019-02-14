@@ -1,6 +1,8 @@
 # Python RSS reader
 - Read 5 latest posts in terminal.
+    - Get users URL with sys.argv
     - Parse XML from RSS URL
+        - Check if input exists 
         - Two sources with written behavior + one user controlled(by teg search)   
     - Search titles by tags special tags
     - Find time of updating or adding every single news 
