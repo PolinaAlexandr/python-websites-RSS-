@@ -16,7 +16,6 @@ class TutArticle(Article):
             tree_item.find('pubDate').text,
             '%a, %d %b %Y %H:%M:%S %z'
         )
-
         super().__init__(title, pub_date)
         self.category = tree_item.find('category').text
 
@@ -31,10 +30,8 @@ class RedditArticle(Article):
             tree_item.find('updated').text, 
             '%Y-%m-11T%H:%M:%S%z'
             )
-            
-            
         super().__init__(title, pub_date)
         self.category = tree_item.find('category').text
 
     def __str__(self):
-        return '{}\tCategory: {}'.format(super()._1_str__(), self.category)
+        return '{}\tCategory: {}'.format(super().__str__(), self.category)
