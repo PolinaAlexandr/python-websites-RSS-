@@ -22,13 +22,13 @@ class TutArticle(Article):
     def __str__(self):
         return '{}\tCategory: {}'.format(super().__str__(), self.category)
 
-class RedditArticle(Article):
+class HabrArticle(Article):
     def __init__(self, tree_item):        
-        title = tree_item.find('link').text
+        title = tree_item.find('title').text
         # Mon, 11 Feb 2019 08:40:00 +0300
         pub_date = datetime.strptime(
-            tree_item.find('updated').text, 
-            '%Y-%m-11T%H:%M:%S%z'
+            tree_item.find('pubDate').text,
+            '%a, %d %b %Y %H:%M:%S GMT'
             )
         super().__init__(title, pub_date)
         self.category = tree_item.find('category').text

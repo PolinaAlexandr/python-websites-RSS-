@@ -3,16 +3,14 @@ import requests
 import xml.etree.ElementTree as ET
 
 import article
-from article import Article
-from article import TutArticle
-from article import RedditArticle
+from article import Article, TutArticle, HabrArticle
+
 
 def get_article_class(user_url):
     if 'tut' in user_url:
         return TutArticle, 'item'
-    #todo add RedditArticle
-    elif 'reddit' in user_url:
-        return RedditArticle, 'link'
+    elif 'habr' in user_url:
+        return HabrArticle, 'item'
     else:
         return Article, 'article'
 
@@ -25,7 +23,8 @@ ArticleCls, article_tag = get_article_class(user_url)
 
 tree = ET.fromstring(rss.text)
 
-news = [ArticleCls(el) for el in tree.iter(tag=article_tag)]
+news = [ArticleCls(el) for el in tree.iter(tag=article_tag) if el]
+
 
 for item in news[:5]:
     print(item)
